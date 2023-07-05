@@ -1,0 +1,101 @@
+/* 실습1 */
+
+/* * {
+  color: white;
+  background-color: gray;
+}
+
+span {
+  background-color: red;
+}
+
+#first {
+  background-color: blue;
+}
+
+.second {
+  background-color: green;
+} */
+
+/* 실습2 */
+
+p.lion {
+  background-color: red;
+}
+
+ul > .lion {
+  background-color: greenyellow;
+}
+
+#tiger {
+  background-color: yellow;
+}
+
+.lion {
+  color: sienna;
+}
+
+ul > .lion {
+  font-weight: bold;
+}
+
+#tiger + li {
+  background-color: skyblue;
+}
+
+li.lion ~ li {
+  background-color: orange;
+}
+
+/* 실습3 */
+
+h1:hover {
+  color: red;
+}
+
+a:active {
+  background-color: blue;
+}
+
+input:focus {
+  background-color: orange;
+}
+
+/* 실습4 */
+
+.stripes div:nth-child(2n) {
+  background-color: yellow;
+}
+
+.stripes div:nth-child(2n + 1) {
+  color: white;
+  background-color: navy;
+}
+
+/* 실습5 */
+
+.box::before {
+  content: "택시";
+}
+
+.box::after {
+  content: "빨리";
+}
+
+/* 실습6 */
+
+input[disabled] {
+  background-color: red;
+}
+
+input[placeholder="이름"] {
+  background-color: orange;
+}
+
+input[value="pw"] {
+  background-color: blue;
+}
+
+input[value="000-0000-0000"] {
+  background-color: blue;
+}
