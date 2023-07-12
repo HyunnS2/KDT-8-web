@@ -272,7 +272,22 @@
       //for 문
 
       for (let i = 0; i < 10; i++) {
+        //초기화 = i 라는 변수를 0으로 세팅
+        //조건 = i 가 10보다 작을 때
+        //증감식 = i를 1 씩 증가시키겠다.
         console.log("i : ", i);
+      }
+
+      //while 문 : ~ 하는 동안
+
+      let flag = true;
+      while (flag) {
+        let a = prompt("끝내고 싶으면 exit을 입력하시오.");
+        if (a == "exit") {
+          flag = False;
+        } else {
+          console.log("입력값은" + a + "입니다.");
+        }
       }
     </script>
   </head>
