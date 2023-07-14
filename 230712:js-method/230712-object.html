@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!--     
     <script>
       // 표준 객체 : 자바 스크립트에 기본적으로 내장되어 있는 친구들
       // String, Number,Array
@@ -68,7 +69,53 @@
       console.log(Math.round(1.8));
       console.log(Math.floor(1.9));
       console.log(Math.ceil(1.9));
+
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+      
+
     </script>
+     -->
+
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .div1 {
+        background-color: red;
+      }
+      .div2 {
+        background-color: blue;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <div class="div5">5</div>
+
+    <script>
+      //getElementById
+      console.log(document.getElementId("div5"));
+
+      // getElementByClassName
+      console.log("-----get");
+
+      // getElementByClassName
+
+      // querySelector : 위에서부터 선택자에 일치하는 요소 하나만 가져온다.
+      console.log(document.querySelector(".div2")); // 선택자
+
+      // querySelectorAll : 선택자에 일치하는 모든 요소를 배열 형태로 가져온다.
+      console.log(document.querySelectorAll(".div2")); //선택자
+      console.log(document.querySelectorAll(".div2")[1]);
+
+      // 주의사항
+      // write 는 이미 사용되는 함수이기때문에 함수명으로 쓰면 안됨. 이런 단어들 선택하지 않도록 주의하기.
+    </script>
+  </body>
 </html>
