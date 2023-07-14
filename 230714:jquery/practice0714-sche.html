@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+
+    <script>
+      $("td").on("click", function () {
+        console.log(this);
+        console.log($(this).text());
+      });
+    </script>
+  </head>
+  <body>
+    <label>날짜</label>
+    <input class="dateClass" id="dateId" type="text" />
+    <br />
+    <label>내용</label>
+    <input class="contentClass" id="contentId" type="text" />
+    <br />
+    <button>작성</button>
+    <div>
+      <table width="300">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr style="height: 30px">
+          <td style="color: red">일</td>
+          <td>월</td>
+          <td>화</td>
+          <td>수</td>
+          <td>목</td>
+          <td>금</td>
+          <td style="color: blue">토</td>
+        </tr>
+        <tr>
+          <td style="color: red"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: blue">1</td>
+        </tr>
+        <tr>
+          <td style="color: red">2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td style="color: blue">8</td>
+        </tr>
+        <tr>
+          <td style="color: red">9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td style="color: blue">15</td>
+        </tr>
+        <tr>
+          <td style="color: red">16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td style="color: blue">22</td>
+        </tr>
+        <tr>
+          <td style="color: red">23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+          <td>28</td>
+          <td style="color: blue">29</td>
+        </tr>
+
+        <tr>
+          <td style="color: red">30</td>
+          <td>31</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="color: blue"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 요소가 만들어진 후 동작해야하기 때문에 script는 table보다 아래에 있어야 함 -->
+
+    <script></script>
+  </body>
+</html>
