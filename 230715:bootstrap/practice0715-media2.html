@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        position: relative;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        border: 2px solid red;
+        margin: 30px;
+        border-radius: 10px;
+        background-color: skyblue;
+        display: flex;
+      }
+
+      @media screen and (min-width: 700px) {
+        div {
+          background-color: black;
+          flex-direction: row;
+          flex-wrap: nowrap;
+        }
+
+        .div2 {
+          left: 150px;
+        }
+
+        .div3 {
+          left: 300px;
+        }
+      }
+
+      @media screen and(max-width:700px) {
+        div {
+          background-color: skyblue;
+        }
+
+        .div2 {
+          top: 150px;
+        }
+
+        .div3 {
+          top: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+  </body>
+</html>
