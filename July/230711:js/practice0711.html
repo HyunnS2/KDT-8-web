@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      const colors = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "navy",
+        "purple",
+      ];
+
+      console.log(colors);
+
+      console.log(colors[2]);
+
+      colors.push("Black");
+      console.log(colors);
+      console.log(colors.indexOf("Black"));
+      colors.reverse();
+      console.log(colors);
+
+      //실습3
+
+      console.log("--------------------------");
+
+      const A = "ABC";
+
+      console.log(`${typeof 1} isn't ${typeof A} data type.`);
+
+      //var B = new Boolean(true);
+
+      console.log(
+        `TypeOf 를 boolean 이나 null 에 사용하면, ${typeof null} 결과를 얻을 수 있습니다.`
+      );
+
+      //실습 4
+
+      console.log("--------------------------");
+
+      let mathScore = "77";
+      let engScore = "88";
+
+      let avg = (Number(mathScore) + Number(engScore)) / 2;
+
+      console.log(avg);
+
+      //실습 1
+
+      console.log("--------------------------");
+
+      /*
+      let result = multifly(21, 4);
+      console.log(rt);
+
+      function rt() {
+        return a * b;
+      }*/
+      //
+      function multifly(a1, b1) {
+        console.log(a1);
+        console.log(b1);
+
+        return a1 * b1;
+      }
+
+      let result = multifly(3, 7);
+      let result2 = multifly(2, 2);
+      console.log(result);
+      console.log(result2);
+
+      console.log();
+      //실습2 : 함수 만들기
+
+      console.log("--------------------------");
+
+      //실습 3 : 온클릭 함수 만들기
+
+      //전역변수와 지역변수 : 전역 - 모든 영역 , 지역 -특정 영역
+
+      /*
+      let aa = prompt("첫번째 숫자를 입력하세요");
+      aa = Number(aa);
+      let bb = prompt("두번째 숫자를 입력하세요");
+      bb = Number(bb);
+
+      //let aaa = Number(aa);
+      //let bbb = Number(bb);
+
+      function add(aa, bb) {
+        let result = aa + bb; // aa ,bb 는 전역변수, result 는 지역변수
+        alert(result);
+      }
+
+      function sub(aa, bb) {
+        let result = aa - bb;
+        alert(result);
+      }
+
+      function divide(aa, bb) {
+        let result = aa / bb;
+        alert(result);
+      }
+
+      function mul(aa, bb) {
+        let resultmul = aaa * bbb;
+        alert(resultmul);
+      }*/
+
+      // 전역변수랑 지역변수
+      /*
+      let a = prompt("첫번째 숫자");
+      a = Number(a);
+      let b = prompt("두번째 숫자");
+      b = Number(b);
+
+      function add() {
+        let result = a + b;
+        alert(result);
+      }
+      function sub() {
+        let result = a - b;
+        alert(a - b);
+      }
+      function divide() {
+        let result = a / b;
+        alert(result);
+      }
+
+      function mul() {
+        let result = a * b;
+        alert(result);
+      }*/
+
+      // 실습4 + 5
+
+      /*
+      let age = prompt("나이 입력");
+      age = Number(age);
+      let s = prompt(" 남/여 성별 입력");
+
+      if (age > 20 && s == "남") {
+        console.log("성인 남자");
+      } else if (age > 20 && s == "여") {
+        console.log("성인 여자");
+      } else if (age > 17 && s == "남") {
+        console.log("남자 고등학생");
+      } else if (age > 17 && s == "여") {
+        console.log("여자 고등학생");
+      } else if (age > 14 && s == "남") {
+        console.log("남자 중학생");
+      } else if (age > 14 && s == "여") {
+        console.log("여자 중학생");
+      } else if (age > 8 && s == "남") {
+        console.log("남자 초등학생");
+      } else if (age > 0 && s == "남") {
+        console.log("남자 유아");
+      } else {
+        console.log("여자 유아");
+      }
+      */
+      //실습 6  0 = 0시
+
+      /*
+      console.log("------------------");
+
+      let now = new Date().getHours();
+
+      now > 12 ? console.log(now + "오후") : console.log(now + "오전");
+
+      */
+      // 실습 7
+      /*
+      console.log("------------------");
+
+      for (let i = 1; i < 1000; i++) {
+        if (i % 2 == 1 && i % 13 == 0) {
+          console.log(i);
+        }
+      }*/
+
+      // 실습 8
+      /*
+      console.log("-----------------");
+
+      for (let a = 2; a < 10; a++) {
+        for (let b = 1; b < 10; b++) {
+          if (b == 1) {
+            console.log("-----" + a + "단------");
+          }
+          console.log(a + "x" + b + "=", a * b);
+        }
+      }*/
+
+      //실습 9
+      console.log("-----------------");
+
+      //for 문
+
+      let sum = 0;
+
+      for (k = 0; k < 100; k++) {
+        if (k % 2 == 0 || k % 3 == 0) {
+          sum += k;
+        }
+      }
+      console.log("sum : ", sum);
+
+      //while 문
+
+      let j = 0;
+      let sum2 = 0;
+
+      while (j < 100) {
+        j++;
+        if (j % 2 == 0 || j % 3 == 0) {
+          sum2 += j;
+        }
+      }
+      console.log("sum : ", sum2);
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="add();">ADD</button>
+    <button onclick="sub();">SUB</button>
+    <button onclick="divide()">DIVIDE</button>
+    <button onclick="mul()">MUL</button> -->
+
+    <!-- 실습4 -->
+  </body>
+</html>

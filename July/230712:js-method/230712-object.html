@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--     
+    <script>
+      // 표준 객체 : 자바 스크립트에 기본적으로 내장되어 있는 친구들
+      // String, Number,Array
+
+      // Date
+      // Date : javascript에서 시간과 날짜에 대한 정보를 얻기 위해 사용되는 객체
+      // 초기화 ( new )
+      // new Date(): 현재 시간
+      // new Date(년,월,일,시,분,초,밀리초) : 내가 parameter로 넣은 특정 시간을 가져온다.
+      // month = ['']
+      let date = new Date();
+
+      console.log(date);
+      // 초기화 할 때 Date 에 값을 넣으면(숫자를 넣으면) 어떤 시간이 나오냐?->1970년 1월 1일 0시부터 밀리초만큼 지난 날짜
+
+      console.log(Date.now()); // 기준 시간으로부터 지금까지 지난 밀리초
+
+      // Date 객체
+      console.log(date.getFullYear()); // getFullYear : 년도
+      console.log(date.getDate()); //getDate : 초기화 한 시간의 일
+      console.log(date.getDay()); // getDay : 현재 요일의 index
+      // 일요일(0) , 월요일(1), 화요일(2), 수요일(3)...토요일(6)
+
+      console.log(date.getTime()); // 내가 기준으로 잡은 시간이 기준 시간으로부터 얼마나 지났는지를 밀리초로.
+
+      console.log(date.getHours()); // 현재시간 (시)
+      console.log(date.getMinutes()); // 현재시간 (분)
+      console.log(date.getSeconds()); // 현재시간 (초)
+
+      // yyyy-mm-dd
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+
+      console.log(`${year}-${month}-${day}`);
+
+      // Math: 수학적인 계산을 위해 사용
+      console.log(Math.PI);
+      console.log(Math.E);
+      console.log(Math.SQRT2);
+
+      // Math 객체 안의 메소드
+      // 1.min: 최솟값
+      console.log(Math.min(45, 2, 0, -1, -5));
+
+      // 2.max : 최댓값
+      console.log(Math.max(45, 2, 0, -1, -5));
+
+      // 3.random : 랜덤한 수를 추출
+      console.log(Math.random());
+
+      //min~max 1~10
+      //let a = Math.random * (max - min) + min;
+      console.log(Math.random() * 9 + 1);
+
+      // 4. round , floor, ceil
+      //round(): 반올림
+      // floor : 인수로 전달받은 값과 같거나 작은 수 중에서 가장 큰 정수를 반환 = 내림
+      // ceil : 인수로 전달받은 값과 같거나 큰 수 중에서 가장 작은 정수를 반환 = 올림
+      console.log(Math.round(1.8));
+      console.log(Math.floor(1.9));
+      console.log(Math.ceil(1.9));
+
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+      
+
+    </script>
+     -->
+
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .div1 {
+        background-color: red;
+      }
+      .div2 {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <div class="div5">5</div>
+
+    <script>
+      //getElementById
+      console.log(document.getElementId("div5"));
+
+      // getElementByClassName
+      console.log("-----get");
+
+      // getElementByClassName
+
+      // querySelector : 위에서부터 선택자에 일치하는 요소 하나만 가져온다.
+      console.log(document.querySelector(".div2")); // 선택자
+
+      // querySelectorAll : 선택자에 일치하는 모든 요소를 배열 형태로 가져온다.
+      console.log(document.querySelectorAll(".div2")); //선택자
+      console.log(document.querySelectorAll(".div2")[1]);
+
+      // 주의사항
+      // write 는 이미 사용되는 함수이기때문에 함수명으로 쓰면 안됨. 이런 단어들 선택하지 않도록 주의하기.
+    </script>
+  </body>
+</html>

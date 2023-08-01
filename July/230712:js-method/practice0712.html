@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // 실습 1
+      let array = [];
+      for (let i = 0; i < 101; i++) {
+        array.push(i);
+      }
+
+      console.log(" 배열 : ", array);
+
+      console.log("--------------------");
+
+      let sum1 = 0;
+
+      // for
+
+      for (let a = 0; a < 101; a++) {
+        sum1 = sum1 + array[a];
+      }
+
+      console.log("for 문 합 : ", sum1);
+
+      // for of
+
+      let sum2 = 0;
+
+      for (let num of array) {
+        sum2 = sum2 + num;
+      }
+
+      console.log(" for of 문 합 : ", sum2);
+
+      // forEach
+
+      let sum3 = 0;
+
+      array.forEach((num) => {
+        sum3 = sum3 + num;
+      });
+
+      console.log(" forEach 문 합", sum3);
+
+      console.log(" _______________________________________");
+
+      // 실습 2
+
+      let fruits1 = [
+        "사과",
+        "딸기",
+        "파인애플",
+        "수박",
+        "참외",
+        "오렌지",
+        "자두",
+        "망고",
+      ];
+
+      let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+
+      let same = [...fruits1, ...fruits2];
+      let diff = [...fruits1, ...fruits2];
+
+      let cross = fruits1.filter((el) => fruits2.includes(el));
+      let notcross = fruits1.filter((el) => !fruits2.includes(el));
+
+      console.log("same : ", cross);
+      console.log(" diff : ", notcross);
+
+      // 실습 3
+    </script>
+  </head>
+  <body></body>
+</html>

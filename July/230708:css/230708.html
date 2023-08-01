@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+
+      img:hover {
+        /*translate: 40px 40px;*/
+        /*transform: translate(100px, 100px);
+        transform: translateY(100px);*/
+
+        /*transform: scale(10);*/
+
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+
+        /*transform: skew(-45deg, 45deg);*/
+      }
+
+      /*2*/
+      /*
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+
+        transition:width 2s ease 0.5s;
+        transition-property: width;
+        transition-duration: 2s;
+        transition-timing-function: ease;
+        transition-delay: 0.5s;
+      }
+
+      div:hover {
+        width: 300px;
+      }
+      */
+
+      /*3*/
+
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: cyan;
+        position: relative;
+        animation-name: myanim;
+        animation-duration: 2s;
+        animation-iteration-count: 3;
+        animation-timing-function: ease;
+        animation-delay: 1s;
+      }
+
+      @keyframes myanim {
+        0% {
+          left: 0px;
+          top: 10px;
+        }
+        25% {
+          left: 100px;
+          top: 20px;
+        }
+        50% {
+          left: 200px;
+          top: 30px;
+        }
+        75% {
+          left: 100px;
+          top: 40px;
+        }
+        100% {
+          left: 0px;
+          top: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <!-- <img src="./dog.jpeg" alt="강아지" />
+
+    <br />
+
+    <div></div> -->
+
+    <br />
+    <!-- 3 -->
+
+    <div></div>
+  </body>
+</html>

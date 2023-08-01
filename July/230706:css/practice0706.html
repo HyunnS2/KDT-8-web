@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./practice0706css.css" />
+    <link rel="stylesheet" href="" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+      integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+      integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+
+    <style>
+      @font-face {
+        font-family: "TTWanjudaedunsancheB";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      /*div {
+        width: 200px;
+        height: 200px;
+        background-color: beige;
+        text-align: center;
+      }
+
+      실습4*/
+      .div1 {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 15px solid red;
+        background-color: orange;
+        box-sizing: content-box;
+        opacity: 0.5;
+      }
+      .div2 {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 15px solid red;
+        background-color: orange;
+        box-sizing: border-box;
+      }
+
+      .start {
+        width: 160px;
+        background-color: honeydew;
+        font-family: "TTWanjudaedunsancheB";
+      }
+
+      .name:hover {
+        background-color: lightblue;
+        font-family: "TTWanjudaedunsancheB";
+      }
+
+      .age:hover {
+        background-color: lightblue;
+      }
+
+      .h2_1 {
+        width: 80px;
+        background-color: aliceblue;
+        font-family: "TTWanjudaedunsancheB";
+      }
+
+      .h2_2 {
+        width: 400px;
+        background-color: aliceblue;
+        font-family: "TTWanjudaedunsancheB";
+      }
+
+      /*실습*/
+
+      .d-none {
+        /*display:none*/
+        background-color: red;
+      }
+
+      .invisible {
+        /*visibility:hidden*/
+        background-color: orangered;
+      }
+
+      .opacity-0 {
+        /*opacity:0*/
+        background-color: tomato;
+      }
+
+      /*실습:요소 사라지게하기*/
+
+      .div3 {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+
+      .div3:hover {
+        visibility: hidden;
+      }
+
+      .boxx {
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 실습1 -->
+    <!-- <div>
+      <span class="html">HTML</span>
+      <span class="css">CSS</span>
+      <span class="java">Javascript</span>
+    </div> -->
+
+    <!-- 실습2 -->
+
+    <!-- <div>KDT</div> -->
+
+    <!-- 실습3 -->
+
+    <div
+      style="
+        border: dashed 2px red;
+        border-width: 5px 10px 15px 20px;
+        border-style: solid dashed dotted double;
+        border-color: red green orange blue;
+        border-radius: 5px 30px 60px 90px;
+      "
+    ></div>
+
+    <br />
+    <hr />
+
+    <!-- 설문조사 폼꾸미기 -->
+
+    <h2 class="start" style="border: dashed 1px black; border-radius: 5px">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      설문조사 <i class="fa-solid fa-magnifying-glass"></i>
+    </h2>
+
+    <br />
+    <label class="nnn">이름</label>
+    <input class="name" type="text" />
+    <br />
+    <label class="eee">이메일</label>
+    <input class="age" type="text" placeholder="love@example.com" />
+    <br />
+    <br />
+    <h2 class="h2_1"><i class="fa-solid fa-check"></i>나이</h2>
+    <input type="radio" name="age" value="10대" checked />10대
+    <input type="radio" name="age" value="20대" />20대
+    <input type="radio" name="age" value="30대" />30대
+    <input type="radio" name="age" value="40대" />40대
+    <input type="radio" name="age" value="50대" />50대
+    <input type="radio" name="age" value="60대 이상" />60대 이상
+
+    <br />
+
+    <h2 class="h2_2">
+      <i class="fa-solid fa-check"></i>원하는 강의(복수응답가능합니다.)
+    </h2>
+    <input type="checkbox" name="class" value="html" checked />html
+    <input type="checkbox" name="class" value="javascript" />javascript
+    <input type="checkbox" name="class" value="css" />css
+    <br />
+    <textarea
+      class="boxx"
+      cols="80"
+      rows="10"
+      placeholder="하고 싶은 말을 써주세요:)"
+    ></textarea>
+    <input type="button" value="제출" />
+
+    <br />
+    <hr />
+
+    <!-- 실습4 -->
+
+    <div style="border-radius: 5px 30px 60px 90px"></div>
+
+    <br />
+    <hr />
+    <!-- 실습5 -->
+
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <!-- 실습 -->
+
+    <div class="square">original</div>
+    <div class="square d-none">d-none</div>
+    <div class="square invisible">invisible</div>
+    <div class="square opacity-0">opacity-0</div>
+    <div class="square">original</div>
+
+    <br />
+    <hr />
+
+    <!-- 실습 -->
+
+    <div class="div3"></div>
+  </body>
+</html>
