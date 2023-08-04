@@ -33,6 +33,7 @@ const uploadDetail = multer({
     destination(req, file, done) {
       // destination 괄호 안 done은 callback 이니까 이름 맘대로 해도 됨
 
+      // 완료되면 "upload/"라느 폴더에 넣으라는 뜻 . null은 에러처리 하는 곳으로 생략함
       done(null, "upload/");
     },
 

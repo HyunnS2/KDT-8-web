@@ -40,8 +40,11 @@ const uploadDetail = multer({
     },
 
     filename(req, file, done) {
+      console.log("filename: ", req.body);
       const ext = path.extname(file.originalname);
-      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+
+      done(null, req.body.userId + Date.now() + ext);
+      // done(null, path.basename(file.originalname, ext) + Date.now() + ext);
       //   console.log(ext);
     },
   }),
@@ -49,6 +52,14 @@ const uploadDetail = multer({
   // 파일의 용량 제한
   // 1MB = 1024 * 1024* 1 , 5MB = 1024 * 1024 * 5
   limits: { fileSize: 1024 * 1024 * 5 },
+});
+
+app.post("/result", uploadDetail.single("profile"), (req, res) => {
+  console.log(req.file);
+  res.render("result", {
+    userInfo: req.body,
+    profile: req.file.path,
+  });
 });
 
 // 동적
