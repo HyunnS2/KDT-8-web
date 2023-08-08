@@ -19,45 +19,63 @@
 
 const mysql = require("mysql");
 
+//mysql연결
 const conn = mysql.createConnection({
-  host: "localhost", // undefined 에러 발생시 "127.~ "로 설정해보기.
+  host: "localhost",
   user: "user",
   password: "1234",
   database: "kdt8",
 });
+conn.connect((err) => {
+  if (err) {
+    console.log("error");
+    return;
+  }
+  console.log("connect");
+});
 
-// 전체 보이기
 exports.getVisitors = (callback) => {
-  const sql = "SELECT * FROM visitor;";
-  conn.query(sql, (err, rows) => {
-    if (err) throw err;
-    console.log("Visitor :", rows);
-
+  console.log(conn);
+  const query = `SELECT * FROM visitor`;
+  conn.query(query, (err, rows) => {
+    console.log("visitor", rows);
+    if (err) {
+      console.log(err);
+    }
+    callback(rows);
+  });
+};
+exports.getVisitor = (id, callback) => {
+  console.log("방명록 하나 조회");
+  console.log(id);
+  const query = `SELECT * FROM visitor WHERE id=${id}`;
+  conn.query(query, (err, rows) => {
+    console.log(rows);
     callback(rows);
   });
 };
 
-// 방명록 하나 조회
-exports.clickVisitors = (callback) => {
-  const sql = "SELECT ";
+exports.postVisitor = (data, callback) => {
+  console.log("방명록 하나 추가");
+  const query = `INSERT INTO visitor (name, comment) VALUES ('${data.name}', '${data.comment}')`;
+  conn.query(query, (err, rows) => {
+    console.log("write", rows);
+    callback(rows);
+  });
 };
 
-// 방명록 하나 추가
-exports.addVisitors = (callback) => {
-  const sql = "INSERT INTO visitor (name,comment) values ( ? , ? );";
+exports.patchVisitor = (data, callback) => {
+  console.log("방명록 하나 수정");
+  const query = `UPDATE visitor SET name='${data.name}',comment='${data.comment}' WHERE id=${data.id}`;
+  conn.query(query, (err, rows) => {
+    console.log(rows);
+    callback(rows);
+  });
 };
-
-// 방명록 하나 수정
-exports.editVisitors = (callback) => {
-  const sql = "";
-};
-
-// 방명록 하나 삭제
-exports.deleteVisitors = (callback) => {
-  const sql = "DELETE FROM visitor where id = ?;";
-  conn.query(sql, (err, rows) => {
-    if (err) throw err;
-    console.log("delete Visitor :", rows);
+exports.deleteVisitor = (data, callback) => {
+  console.log("방명록 하나 삭제");
+  const query = `DELETE FROM visitor WHERE id=${data.id}`;
+  conn.query(query, (err, rows) => {
     callback(rows);
   });
 };
