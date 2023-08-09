@@ -45,7 +45,7 @@ exports.post_signin = (data, callback) => {
 
 // 내 프로필
 exports.post_profile = (data, callback) => {
-  const query = `SELECT * FROM user0808 WHERE userid=${data.profile}`;
+  const query = `SELECT * FROM user0808 WHERE userid='${data.profile}'`;
   conn.query(query, (err, rows) => {
     if (err) {
       console.log(err);
@@ -53,6 +53,14 @@ exports.post_profile = (data, callback) => {
     }
     console.log("post_profile", rows);
     callback(rows);
+  });
+};
+
+//
+exports.edit_profile = (data, callback) => {
+  const query = ` UPDATE user0808 SET userid='${data.userid}',pw='${data.pw}',name='${data.name}' WHERE id = ${data.id}`;
+  conn.query(query, (err, rows) => {
+    callback();
   });
 };
 
@@ -67,10 +75,9 @@ exports.postEdit = (data, callback) => {
 };
 
 //  삭제
-exports.postDelete = (data, callback) => {
-  console.log("프로필 삭제");
-  const query = `DELETE FROM user0808 WHERE id=${data.id}`;
+exports.delete_profile = (id, callback) => {
+  const query = `DELETE FROM user0808 WHERE id=${id}`;
   conn.query(query, (err, rows) => {
-    callback(rows);
+    callback();
   });
 };

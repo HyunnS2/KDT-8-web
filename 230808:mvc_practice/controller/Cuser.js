@@ -26,6 +26,7 @@ exports.post_signin = (req, res) => {
   // model
   User.post_signin(req.body, (result) => {
     res.send(result);
+    // 로그인 되면 배열로 값이 오기 때문에 0 이상 일 것 . 아니면 로그인 실패한 것
     if (result.length > 0) {
       res.send({ result: true, data: result[0] });
     } else {
@@ -46,18 +47,17 @@ exports.post_profile = (req, res) => {
   });
 };
 
-// 여기서부터 다시............
-
 // 프로필 수정
-exports.postEdit = (req, res) => {
-  User.postEdit(req.body, () => {
+exports.edit_profile = (req, res) => {
+  console.log(req.body);
+  User.edit_profile(req.body, () => {
     res.send({ result: true });
   });
 };
 
 // 삭제
-exports.postDelete = (req, res) => {
-  User.postDelete(req.body, () => {
+exports.delete_profile = (req, res) => {
+  User.delete_profile(req.body.id, () => {
     res.send({ result: true });
   });
 };

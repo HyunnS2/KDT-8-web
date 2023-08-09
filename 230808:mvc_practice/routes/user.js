@@ -17,10 +17,10 @@ router.get("/signin", controller.signin);
 router.post("/signin", controller.post_signin);
 
 // 내 프로필
-router.post("/profile", controller.postProfile);
+router.post("/profile", controller.post_profile);
 // 수정
-router.update("/profile/edit", controller.postEdit);
+router.patch("/profile/edit", controller.edit_profile);
 // 삭제
-router.delete("profile/delete", controller.postDelete);
+router.delete("profile/delete", controller.delete_profile);
 
 module.exports = router;
