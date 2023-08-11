@@ -12,7 +12,7 @@ app.use("/static", express.static(__dirname + "/static"));
 const router = require("./routes/student");
 app.use("/", router);
 
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
   });
