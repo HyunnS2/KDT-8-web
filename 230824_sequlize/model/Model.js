@@ -19,9 +19,9 @@ const mysql = require("mysql");
 // });
 const conn = mysql.createPool({
   host: "localhost",
-  user: "user",
+  user: "kdt",
   password: "1234",
-  database: "kdt8",
+  database: "kdt",
   // port: 3306,
   connectionLimit: 30, //최대 연결 수(기본값은 10)
 });
@@ -47,7 +47,7 @@ const db_signup = (data, cb) => {
   //     cb();
   // });
   //prepared statement
-  const query = "INSERT INTO user0808 (userid, pw, name) VALUES (?,?,?)";
+  const query = "INSERT INTO user (userid, pw, name) VALUES (?,?,?)";
   conn.query(query, [data.userid, data.pw, data.name], (err, rows) => {
     if (err) {
       console.log(err);
@@ -74,7 +74,7 @@ const db_signin = (data, cb) => {
   //     // }
   // });
   //prepared statement
-  const query = "SELECT * FROM user0808 WHERE userid = ? AND pw = ?";
+  const query = "SELECT * FROM user WHERE userid = ? AND pw = ?";
   conn.query(query, [data.userid, data.pw], (err, rows) => {
     if (err) {
       console.log(err);
@@ -84,24 +84,22 @@ const db_signin = (data, cb) => {
     cb(rows);
   });
 };
-
-// 사용자 정보 조회
-const db_profile = (data) => {
-  const query = `SELECT * FROM user0808 WHERE id = ?`;
-  conn.query(query, [data, init], (err, rows) => {
+//사용자 정보 조회
+const db_profile = (data, cb) => {
+  const query = "SELECT * FROM user WHERE id = ?";
+  conn.query(query, [data.init], (err, rows) => {
     if (err) {
       console.log(err);
       return;
     }
     console.log("db_profile", rows);
-    // select문은 배열을 반환
+    //select문은 배열을 반환
     cb(rows);
   });
 };
-
-// 프로필 수정
-const db_profile_edit = (data) => {
-  const query = `UPDATE user0808 SET userid=?,name=?,pw=? WHERE id=?`;
+//프로필 수정
+const db_profile_edit = (data, cb) => {
+  const query = "UPDATE user SET userid=?,name=?,pw=? WHERE id=? ";
   conn.query(query, [data.userid, data.name, data.pw, data.id], (err, rows) => {
     if (err) {
       console.log(err);
@@ -115,4 +113,6 @@ const db_profile_edit = (data) => {
 module.exports = {
   db_signup,
   db_signin,
+  db_profile,
+  db_profile_edit,
 };
