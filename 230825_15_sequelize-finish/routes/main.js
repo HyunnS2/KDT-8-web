@@ -22,7 +22,10 @@ router.patch("/profile/edit", controller.edit_profile);
 //회원 구매목록
 router.get("/profile/buy", controller.buy);
 
-// 회원 탈퇴
+//회원탈퇴
 router.delete("/destroy", controller.destroy);
+
+// 전체 회원 조회
+router.get("/all", controller.all);
 
 module.exports = router;

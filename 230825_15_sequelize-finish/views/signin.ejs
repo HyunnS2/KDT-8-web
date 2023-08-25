@@ -26,6 +26,7 @@
           },
         }).then((res) => {
           if (res.data.result) {
+            localStorage.setItem("token", res.data.token);
             alert(`${res.data.data.name}님 로그인 성공`);
             document.location.href = `/profile/${res.data.data.id}`;
           } else {

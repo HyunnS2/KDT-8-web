@@ -1,5 +1,6 @@
 // const model = require("../model/Model");
 const { User } = require("../models");
+const bcrypt = require("bcrypt");
 
 ///////////////////////////////////////
 //GET
@@ -34,7 +35,7 @@ const buy = () => {};
 ////////////////////////////////////////////////
 //POST
 //회원가입
-const post_signup = (req, res) => {
+const post_signup = async (req, res) => {
   //   model.db_signup(req.body, () => {
   //     res.json({ result: true });
   //   });
@@ -42,10 +43,14 @@ const post_signup = (req, res) => {
   const { userid, name, pw } = req.body;
 
   // create 데이터 생성
+  // 실습과제 - 비밀번호 암호화하여 저장
+
+  const hash = await bcryptPassword(pw);
+
   User.create({
     userid,
     name,
-    pw,
+    pw: hash,
   }).then(() => {
     res.json({ result: true });
   });
@@ -100,3 +105,14 @@ module.exports = {
   post_signin,
   edit_profile,
 };
+
+//////////////////////////////////////////////
+// npm i bcrypt
+// function
+
+// 암호화
+// 화살표 함수 축약형 : { } 삭제 후 return 삭제 ( 한줄 코드일 때 사용! )
+const bcryptPassword = (password) => bcrypt.hash(password, 11);
+
+// 비교
+const compareFunc = (password, dbpass) => bcrypt.compare(password, dbpass);

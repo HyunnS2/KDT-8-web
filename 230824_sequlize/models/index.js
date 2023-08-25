@@ -11,6 +11,10 @@ const sequelize = new Sequelize(
   config
 );
 
+// 모델
+// db에 User 생성
+db.User;
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

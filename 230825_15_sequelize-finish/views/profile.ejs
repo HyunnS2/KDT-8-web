@@ -34,15 +34,18 @@
             name: form.name.value,
             pw: form.pw.value,
           },
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }).then((res) => {
           if (res.data.result) {
             document.location.reload();
           }
         });
       }
-
+      //회원탈퇴
       function destroy() {
-        if (!confirm("회원타로티를 하기섺습니다?")) {
+        if (!confirm("회원탈퇴 하시겠습니까?")) {
           return;
         }
         axios({
@@ -53,7 +56,7 @@
           },
         }).then((res) => {
           if (res.data.result) {
-            alert("회원 탈퇴 완료");
+            alert("회원탈퇴 완료되었습니다");
             document.location.href = "/";
           }
         });
