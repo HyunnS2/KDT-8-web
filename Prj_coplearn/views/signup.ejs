@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- fontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/5286d2d6db.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>SignUp</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="navbar_hi">
+        <div class="navbar_logo_hi">
+          <i class=""></i>
+          <a href="">Coplean</a>
+        </div>
+        <ul class="navbar_menu_hi">
+          <li><a id="home_hi" href="#">HOME</a></li>
+          <li><a id="list_hi" href="#">프로젝트 목록</a></li>
+          <li>
+            <a id="list_hi" href="#"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
+          </li>
+          <li><a id="login_hi" href="#">로그인</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 반응형 이미지 배경 (웹용) -->
+    <img class="signup_back" src="/back_co.gif" alt="" />
+
+    <!-- 시작 ! -->
+    <div class="signup_container">
+      <!-- 반응형 이미지 아이콘 ( 웹용 ) -->
+      <div class="img">
+        <img src="/coplearn_logo.png" />
+      </div>
+
+      <div class="signup_content">
+        <!-- 로그인 폼 시작 -->
+        <form
+          id="signup_form"
+          action="/signup"
+          name="signup_register"
+          method="post"
+        >
+          <h2 class="title">회원가입</h2>
+
+          <!-- username -->
+          <div class="input_div name">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <h5>USERNAME</h5>
+              <input type="text" class="input" id="username" name="username" />
+            </div>
+          </div>
+
+          <!-- email -->
+          <div class="input_div email">
+            <div class="i">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="div">
+              <h5>EMAIL</h5>
+              <input type="email" class="input" name="email" id="email" />
+            </div>
+          </div>
+          <button id="send_code">인증번호 받기</button>
+
+          <!-- 인증번호 -->
+          <div class="input_div cert">
+            <div class="i">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="div">
+              <h5>CODE</h5>
+              <input
+                type="email"
+                class="input"
+                id="cert_code"
+                name="cert_code"
+              />
+            </div>
+          </div>
+          <button id="verify_code" onclick="cert_email()">인증하기</button>
+
+          <!-- password -->
+          <div class="input_div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input
+                type="password"
+                class="input"
+                name="password"
+                id="password"
+              />
+            </div>
+          </div>
+
+          <!-- 가입하기 버튼 -->
+          <button
+            type="submit"
+            class="signup_btn"
+            id="signup_btn"
+            onclick="signup_register()"
+          >
+            가입하기
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 회원가입 기능 동작 JS -->
+
+    <script>
+      // 회원가입 버튼 클릭 시 실행 함수
+      function handleSignup() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // axios 서버 요청 작업 추가하기
+        axios
+          .post("signup", {
+            username: username,
+            email: email,
+            password: password,
+          })
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((error) => {
+            console.error("회원가입 오류 :", error);
+          });
+      }
+
+      // 인증번호 받기 버튼 클릭 시 실행 함수
+      function sendVerificationCode() {
+        const email = document.getElementById("email").value;
+
+        // // 이메일 주소 유효성 확인
+        // if (!email || !/^S+@\S.\S+$/.test(email)) {
+        //   alert("유효한 이메일 주소를 입력하세요.");
+        //   return;
+        // }
+
+        // axios 서버 작업 추가하기
+        axios
+          .post("/send-email", {
+            email: email,
+          })
+          .then((res) => {
+            console.log(res.data);
+            alert("인증번호가 이메일로 전송되었습니다.");
+          })
+          .catch((error) => {
+            console.log("인증번호 전송 오류:", error);
+          });
+      }
+
+      // 회원가입 버튼 클릭 시 handleSignup 함수 호출
+      document
+        .getElementById("signup_form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          handleSignup();
+        });
+
+      // 인증번호 받기 버튼 클릭 시 sendVerificationCode 함수 호출
+      document
+        .getElementById("send_code")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          sendVerificationCode();
+        });
+    </script>
+
+    <!-- input 태그 media JS -->
+    <script>
+      const inputs = document.querySelectorAll(".input");
+
+      function addcl() {
+        let parent = this.parentNode.parentNode;
+        parent.classList.add("focus");
+      }
+
+      function remcl() {
+        let parent = this.parentNode.parentNode;
+        if (this.value == "") {
+          parent.classList.remove("focus");
+        }
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", addcl);
+        input.addEventListener("blur", remcl);
+      });
+    </script>
+  </body>
+</html>
